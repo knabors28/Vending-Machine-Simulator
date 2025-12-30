@@ -1,0 +1,59 @@
+//Nabors, 12/8/25 
+
+public class itemClass {
+//pivs 
+	private String name;
+	private double price;
+	private int calories;
+	private int quantity;
+	private static double totalItemsSold = 0;
+
+//constructors 
+	public itemClass (String n, double p, int c, int q)
+	{
+		name = n;
+		price = p;
+		calories = c;
+		quantity = q; 
+	}
+//getters 
+	public String getName()
+	{
+		return name;
+	}
+	public double getPrice()
+	{
+		return price;
+	}
+	public int getCals()
+	{
+		return calories;
+	}
+	public int getQuan()
+	{
+		return quantity;
+	}
+	public double getSales()
+	{
+		return totalItemsSold;
+	}
+	
+//other methods 
+	public void dispense()
+{
+	if (quantity > 0)
+	{quantity --;
+	totalItemsSold ++;
+	System.out.println("Dispensing item . . .");}
+	else
+	{System.out.println("Item out of stock. Dispensing change. . . Restocking . . .");}
+}
+	public void addInventory(int amount)
+	{
+		quantity += amount;
+	}
+	public String toString()
+	{
+		return name + " | " + price + " | " + quantity + " remaining";
+	}
+}
