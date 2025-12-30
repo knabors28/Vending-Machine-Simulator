@@ -1,19 +1,19 @@
-//Nabors 12/8/25
-public class vendingClass {
+//Nabors12/8/25
+public class vendingclass {
 
 //pivs 
-		private itemClass slot1;
-		private itemClass slot2;
-		private itemClass slot3;
+		private itemclass slot1;
+		private itemclass slot2;
+		private itemclass slot3;
 		private double currentBalance;
 		private double totalSales;
 
 //constructors 
-	public vendingClass ()
+	public vendingclass ()
 	{
-		slot1 = new itemClass("Coke",1 ,100, 1);
-		slot2 = new itemClass ("Sprite", 1.50, 80, 3);
-		slot3 = new itemClass ("Mountain Dew", 1.25, 150, 6);
+		slot1 = new itemclass("Coke",1 ,100, 1);
+		slot2 = new itemclass ("Sprite", 1.50, 80, 3);
+		slot3 = new itemclass ("Mountain Dew", 1.25, 150, 6);
 	}
 //methods 
 	public void displayMenu()
@@ -108,3 +108,4 @@ public class vendingClass {
 		{return "Invalid slot number.";}}
 		
 		}
+
