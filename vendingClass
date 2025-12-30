@@ -1,0 +1,110 @@
+//Nabors 12/8/25
+public class vendingClass {
+
+//pivs 
+		private itemClass slot1;
+		private itemClass slot2;
+		private itemClass slot3;
+		private double currentBalance;
+		private double totalSales;
+
+//constructors 
+	public vendingClass ()
+	{
+		slot1 = new itemClass("Coke",1 ,100, 1);
+		slot2 = new itemClass ("Sprite", 1.50, 80, 3);
+		slot3 = new itemClass ("Mountain Dew", 1.25, 150, 6);
+	}
+//methods 
+	public void displayMenu()
+	{
+		System.out.println("Slot 1: " + slot1.toString() + "\nSlot 2: " + slot2.toString() + "\nSlot 3: " + slot3.toString());
+	}
+	public void insertMoney(double amount)
+	{
+		System.out.println((currentBalance += amount) + " Accepted."); 
+	}
+	public void select(int slotNum)
+	{
+		if (slotNum == 1)
+		{
+			if (currentBalance >= slot1.getPrice())
+		{		slot1.dispense();
+				double change = currentBalance - slot1.getPrice();
+				if (change == 0)
+				{totalSales += currentBalance;
+                currentBalance = 0;}
+			if (change > 0)
+			{System.out.println("Here is $" + change + " change.");
+			currentBalance -= change;
+			totalSales += currentBalance;
+            currentBalance = 0;}}
+			else 
+			{System.out.print("Insufficient funds.\n");
+             currentBalance = 0; ;}
+		}
+		if (slotNum == 2)
+		{
+			if (currentBalance >= slot2.getPrice())
+		{		slot2.dispense();
+				double change = currentBalance - slot2.getPrice();
+				if (change == 0)
+				{totalSales += currentBalance;
+                currentBalance = 0;}
+			if (change > 0)
+			{System.out.println("Here is $" + change + " change.");
+			currentBalance -= change;
+			totalSales += currentBalance;
+            currentBalance = 0;}}
+			else 
+			{System.out.print("Insufficient funds.\n");
+            currentBalance = 0;}
+		}
+	if (slotNum == 3)
+		{
+			if (currentBalance >= slot3.getPrice())
+		{		slot3.dispense();
+				double change = currentBalance - slot3.getPrice();
+				if (change == 0)
+				{totalSales += currentBalance;
+                currentBalance = 0;}
+			if (change > 0)
+			{System.out.println("Here is $" + change + " change.");
+			currentBalance -= change;
+			totalSales += currentBalance;
+              currentBalance = 0;}}
+			else 
+			{System.out.print("Insufficient funds.\n");
+            currentBalance = 0;}
+		}
+	}
+
+	public void restockItem(int slotNum, int amount)
+	{
+		if (slotNum == 1)
+		{slot1.addInventory(amount);}
+		if (slotNum == 2)
+		{slot2.addInventory(amount);}
+		if (slotNum == 3)
+		{slot3.addInventory(amount);}
+	}
+	public double withdrawProfits()
+	{
+		double temp = totalSales;
+		totalSales = 0;
+		System.out.print("You made $" + temp);
+		return temp;
+	}
+//custom method
+	public String getHealthiest(int slotNum)
+	{
+		if (slotNum == 2)
+		{return "That is the healthiest choice, with 80 calories.";}
+		else if (slotNum ==1)
+		{return "That is the second healthiest choice, with 100 calories.";}
+		else if (slotNum == 3)
+		{return "That is the third healthiest choice, with 150 calories.";}
+		else 
+		{return "Invalid slot number.";}}
+		
+		}
