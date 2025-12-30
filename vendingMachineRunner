@@ -1,0 +1,65 @@
+//Nabors 12/8/25
+import java.util.Scanner;
+public class vendingMachineRunner {
+
+	public static void main (String[] args) {
+	Scanner kb =  new Scanner(System.in);
+		vendingclass machine = new vendingclass();
+//path 1	
+		machine.displayMenu();
+		System.out.println("Would you like to know the healthiest options? Press Yes or No.");
+		String answer = kb.nextLine();
+		System.out.println("Enter the number slot you want.");
+		int slotNum = kb.nextInt();
+		kb.nextLine();
+//calling special method
+			if (answer.equals("Yes") || answer.equals("yes"))
+				{System.out.println(machine.getHealthiest(slotNum));}
+				
+		System.out.println("Insert your money.");
+		double amount = kb.nextDouble();
+		machine.insertMoney(amount);
+		machine.select(slotNum);
+//path 2
+      machine.displayMenu();
+		System.out.println("Would you like to know the healthiest options? Press Yes or No.");
+		kb.nextLine();
+		 answer = kb.nextLine();
+		System.out.println("Enter the number slot you want.");
+		 slotNum = kb.nextInt();
+		kb.nextLine();
+	//calling special method
+			if (answer.equals("Yes") || answer.equals("yes"))
+				{System.out.println(machine.getHealthiest(slotNum));}
+				
+		System.out.println("Insert your money.");
+		amount = kb.nextDouble();
+		machine.insertMoney(amount);
+		machine.select(slotNum);
+
+//path 3 and 4
+      machine.displayMenu();
+		System.out.println("Would you like to know the healthiest options? Press Yes or No.");
+		kb.nextLine();
+		 answer = kb.nextLine();
+		System.out.println("Enter the number slot you want.");
+		 slotNum = kb.nextInt();
+		kb.nextLine();
+	//calling special method
+			if (answer.equals("Yes") || answer.equals("yes"))
+				{System.out.println(machine.getHealthiest(slotNum));}
+//restock			
+		System.out.println("Insert your money.");
+		amount = kb.nextDouble();
+		machine.insertMoney(amount);
+		machine.select(slotNum);
+        machine.restockItem(slotNum, 6);
+        System.out.println("Insert your money.");
+		amount = kb.nextDouble();
+		machine.insertMoney(amount);
+        machine.select(slotNum);
+    machine.withdrawProfits();
+		
+	}
+}
+
