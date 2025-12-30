@@ -1,6 +1,6 @@
-//Nabors, 12/8/25 
+//Nabors 12/8/25 
 
-public class itemClass {
+public class itemclass {
 //pivs 
 	private String name;
 	private double price;
@@ -9,7 +9,7 @@ public class itemClass {
 	private static double totalItemsSold = 0;
 
 //constructors 
-	public itemClass (String n, double p, int c, int q)
+	public itemclass (String n, double p, int c, int q)
 	{
 		name = n;
 		price = p;
@@ -56,4 +56,7 @@ public class itemClass {
 	{
 		return name + " | " + price + " | " + quantity + " remaining";
 	}
+	
+
 }
+
